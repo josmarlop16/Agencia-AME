@@ -18,7 +18,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier Prime', 'Courier New', monospace !important;
             background: #0a1929;
             color: #ffffff;
             overflow-x: hidden;
@@ -51,7 +51,7 @@
         }
 
         .logo-container img {
-            max-width: 200px;
+            max-width: 250px;
             height: auto;
         }
 
@@ -76,12 +76,14 @@
             font-weight: bold;
             border: 2px solid #c0392b;
             z-index: 100;
+            font-family: 'Special Elite', cursive !important;
+            letter-spacing: 2px;
         }
 
         /* NAVEGACIÓN */
         nav {
             background: rgba(13, 27, 42, 0.95);
-            border-bottom: 3px solid #4a90e2;
+            border-bottom: 3px solid #5a9bd4;
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: sticky;
@@ -104,21 +106,22 @@
         nav a, nav .nav-btn {
             color: #ffffff;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             padding: 10px 20px;
             border: 2px solid transparent;
             transition: all 0.3s;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             border-radius: 5px;
             display: block;
             cursor: pointer;
             background: transparent;
+            font-family: 'Special Elite', cursive !important;
         }
 
         nav a:hover, nav a.active, nav .nav-btn:hover {
-            border: 2px solid #4a90e2;
-            background: rgba(74, 144, 226, 0.2);
+            border: 2px solid #5a9bd4;
+            background: rgba(90, 155, 212, 0.2);
         }
 
         /* SUBMENÚ DESPLEGABLE */
@@ -128,10 +131,10 @@
             top: 100%;
             left: 0;
             background: rgba(13, 27, 42, 0.98);
-            border: 2px solid #4a90e2;
+            border: 2px solid #5a9bd4;
             border-top: none;
             border-radius: 0 0 5px 5px;
-            min-width: 350px;
+            min-width: 400px;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
@@ -142,11 +145,12 @@
 
         .submenu a {
             padding: 12px 20px;
-            font-size: 14px;
+            font-size: 13px;
             border: none;
-            border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+            border-bottom: 1px solid rgba(90, 155, 212, 0.3);
             text-transform: none;
             letter-spacing: 0.5px;
+            font-family: 'Courier Prime', monospace !important;
         }
 
         .submenu a:last-child {
@@ -154,8 +158,8 @@
         }
 
         .submenu a:hover {
-            background: rgba(74, 144, 226, 0.3);
-            border-left: 3px solid #4a90e2;
+            background: rgba(90, 155, 212, 0.3);
+            border-left: 3px solid #5a9bd4;
         }
 
         .nav-item-with-submenu > .nav-btn::after {
@@ -185,39 +189,47 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #4a90e2;
+            border-bottom: 2px solid #5a9bd4;
         }
 
         .seccion-header h2 {
             font-size: 32px;
             margin-bottom: 10px;
-            color: #4a90e2;
+            color: #5a9bd4;
+            font-family: 'Special Elite', cursive !important;
+            letter-spacing: 2px;
         }
 
         .seccion-header .codigo {
             color: #94b8d6;
             opacity: 0.9;
             font-size: 14px;
+            letter-spacing: 1px;
+            font-family: 'Courier Prime', monospace !important;
         }
 
         .contenido {
             background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #4a90e2;
+            border: 2px solid #5a9bd4;
             border-radius: 10px;
             padding: 30px;
             line-height: 1.8;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            font-family: 'Courier Prime', monospace !important;
         }
 
         .contenido h3 {
-            color: #4a90e2;
+            color: #5a9bd4;
             margin: 30px 0 15px 0;
             font-size: 24px;
+            font-family: 'Special Elite', cursive !important;
         }
 
         .contenido p {
             margin-bottom: 20px;
             color: #ffffff;
+            font-family: 'Courier Prime', monospace !important;
         }
 
         .contenido ul {
@@ -228,11 +240,17 @@
         .contenido li {
             margin-bottom: 10px;
             color: #ffffff;
+            font-family: 'Courier Prime', monospace !important;
         }
 
         .contenido strong {
-            color: #4a90e2;
+            color: #5a9bd4;
             font-weight: bold;
+        }
+
+        .contenido em {
+            color: #f39c12;
+            font-style: italic;
         }
 
         /* PÁGINA PRINCIPAL */
@@ -242,64 +260,76 @@
 
         #principal h1 {
             font-size: 42px;
-            color: #4a90e2;
+            color: #5a9bd4;
             text-align: center;
             margin-bottom: 30px;
+            font-family: 'Special Elite', cursive !important;
+            letter-spacing: 3px;
         }
 
         #principal .intro {
             background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #4a90e2;
+            border: 2px solid #5a9bd4;
             border-radius: 10px;
             padding: 40px;
             line-height: 1.8;
+            font-family: 'Courier Prime', monospace !important;
         }
 
-        /* ARCHIVOS PDF */
-        .archivos-container {
+        /* VISTA PREVIA PDF */
+        .pdf-preview-container {
             margin-top: 30px;
             padding: 20px;
-            background: rgba(74, 144, 226, 0.1);
+            background: rgba(90, 155, 212, 0.1);
             border-radius: 8px;
-            border: 1px solid #4a90e2;
+            border: 1px solid #5a9bd4;
         }
 
-        .archivos-header {
+        .pdf-preview-header {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .archivos-header h3 {
-            color: #4a90e2;
-            margin-bottom: 10px;
+        .pdf-preview-header h3 {
+            color: #5a9bd4;
+            margin: 0;
+            font-family: 'Special Elite', cursive !important;
         }
 
-        .pdf-link {
-            display: inline-block;
+        .btn-descargar {
             background: #27ae60;
             color: white;
-            padding: 12px 20px;
-            margin: 5px 10px 5px 0;
+            padding: 12px 24px;
+            border: none;
             border-radius: 5px;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 14px;
+            display: inline-block;
+            font-family: 'Courier Prime', monospace !important;
+            font-weight: bold;
         }
 
-        .pdf-link:hover {
+        .btn-descargar:hover {
             background: #229954;
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
         }
 
-        .pdf-link::before {
-            content: '📄 ';
+        .btn-descargar::before {
+            content: '📥 ';
         }
 
-        .sin-archivos {
-            text-align: center;
-            padding: 30px;
-            color: #94b8d6;
-            font-style: italic;
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #5a9bd4;
+            border-radius: 5px;
+            background: #1a2332;
         }
 
         /* Responsive */
@@ -327,7 +357,7 @@
             .clasificado {
                 top: 10px;
                 right: 10px;
-                font-size: 12px;
+                font-size: 10px;
                 padding: 5px 10px;
             }
 
@@ -340,16 +370,25 @@
             }
 
             .logo-container img {
-                max-width: 150px;
+                max-width: 180px;
             }
 
             .imagen-central img {
                 max-width: 250px;
             }
 
-            .pdf-link {
-                display: block;
-                margin: 10px 0;
+            .pdf-viewer {
+                height: 400px;
+            }
+
+            .pdf-preview-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-descargar {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -366,10 +405,10 @@
             <li class="nav-item-with-submenu">
                 <div class="nav-btn" onclick="toggleSubmenu(event, 'submenu1')">1ª Evaluación</div>
                 <div class="submenu" id="submenu1">
-                    <a href="#" onclick="mostrarSeccion('ud1')">UD 1: Protocolo Agente Saludable</a>
-                    <a href="#" onclick="mostrarSeccion('ud2')">UD 2: Activación Capacidades AME</a>
-                    <a href="#" onclick="mostrarSeccion('ud3')">UD 3: Entrenamiento Conjunto</a>
-                    <a href="#" onclick="mostrarSeccion('ud4')">UD 4: Archivo Escalones Invisibles</a>
+                    <a href="#" onclick="mostrarSeccion('ud1')">Unidad Didáctica 1: Protocolo Agente Saludable</a>
+                    <a href="#" onclick="mostrarSeccion('ud2')">Unidad Didáctica 2: Activación Capacidades AME</a>
+                    <a href="#" onclick="mostrarSeccion('ud3')">Unidad Didáctica 3: Entrenamiento Conjunto</a>
+                    <a href="#" onclick="mostrarSeccion('ud4')">Unidad Didáctica 4: Archivo Escalones Invisibles</a>
                 </div>
             </li>
             
@@ -377,10 +416,10 @@
             <li class="nav-item-with-submenu">
                 <div class="nav-btn" onclick="toggleSubmenu(event, 'submenu2')">2ª Evaluación</div>
                 <div class="submenu" id="submenu2">
-                    <a href="#" onclick="mostrarSeccion('ud5')">UD 5: Activación Capacidades II</a>
-                    <a href="#" onclick="mostrarSeccion('ud6')">UD 6: Agente en Terreno: Orientación</a>
-                    <a href="#" onclick="mostrarSeccion('ud7')">UD 7: Entrenamiento Campo: Floorball</a>
-                    <a href="#" onclick="mostrarSeccion('ud8')">UD 8: Patrones Codificados: Tutting</a>
+                    <a href="#" onclick="mostrarSeccion('ud5')">Unidad Didáctica 5: Activación Capacidades II</a>
+                    <a href="#" onclick="mostrarSeccion('ud6')">Unidad Didáctica 6: Agente en Terreno: Orientación</a>
+                    <a href="#" onclick="mostrarSeccion('ud7')">Unidad Didáctica 7: Entrenamiento Campo: Floorball</a>
+                    <a href="#" onclick="mostrarSeccion('ud8')">Unidad Didáctica 8: Patrones Codificados: Tutting</a>
                 </div>
             </li>
             
@@ -388,10 +427,10 @@
             <li class="nav-item-with-submenu">
                 <div class="nav-btn" onclick="toggleSubmenu(event, 'submenu3')">3ª Evaluación</div>
                 <div class="submenu" id="submenu3">
-                    <a href="#" onclick="mostrarSeccion('ud9')">UD 9: Operación Tradición</a>
-                    <a href="#" onclick="mostrarSeccion('ud10')">UD 10: Entrenamiento Campo: Cachibol</a>
-                    <a href="#" onclick="mostrarSeccion('ud11')">UD 11: Coordinación Acrobática AME</a>
-                    <a href="#" onclick="mostrarSeccion('ud12')">UD 12: Agente en Terreno: Voleibol</a>
+                    <a href="#" onclick="mostrarSeccion('ud9')">Unidad Didáctica 9: Operación Tradición</a>
+                    <a href="#" onclick="mostrarSeccion('ud10')">Unidad Didáctica 10: Entrenamiento Campo: Cachibol</a>
+                    <a href="#" onclick="mostrarSeccion('ud11')">Unidad Didáctica 11: Coordinación Acrobática AME</a>
+                    <a href="#" onclick="mostrarSeccion('ud12')">Unidad Didáctica 12: Agente en Terreno: Voleibol</a>
                 </div>
             </li>
         </ul>
@@ -432,7 +471,7 @@
                     <strong>Prepárate. Entrena. Muévete.</strong><br>
                     La agencia te necesita.
                 </p>
-                <div style="background: rgba(74, 144, 226, 0.2); border-left: 4px solid #4a90e2; padding: 20px; margin-top: 30px; border-radius: 5px;">
+                <div style="background: rgba(90, 155, 212, 0.2); border-left: 4px solid #5a9bd4; padding: 20px; margin-top: 30px; border-radius: 5px;">
                     <p style="font-size: 22px; text-align: center; margin: 0;">
                         <strong>Bienvenido a la AME</strong><br>
                         <span style="font-size: 18px;">Agencia de Movimiento y Energía</span>
@@ -444,230 +483,233 @@
         <!-- UD 1 -->
         <section id="ud1" class="seccion">
             <div class="seccion-header">
-                <h2>UD 1: PROTOCOLO AGENTE SALUDABLE</h2>
+                <h2>UD1 - PROTOCOLO AGENTE SALUDABLE</h2>
                 <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 1 ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Hábitos saludables, higiene postural y alimentación equilibrada para agentes AME.</p>
+                <p>Antes de cualquier misión, un/a agente debe preparar su cuerpo. En esta unidad se trabajan los principios del calentamiento y la vuelta a la calma, junto con nociones básicas de primeros auxilios (protocolo PAS). Aprenderéis a activar vuestro cuerpo de forma progresiva, regular el esfuerzo y actuar ante emergencias, entendiendo la seguridad como parte esencial de la práctica física.</p>
+                <p><strong>💬 <em>¿Estás preparado para actuar con seguridad antes, durante y después de cada misión?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud1">
-                    <!-- Los PDFs se mostrarán aquí automáticamente -->
-                </div>
+                <iframe src="data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 2 -->
         <section id="ud2" class="seccion">
             <div class="seccion-header">
-                <h2>UD 2: ACTIVACIÓN DE LAS CAPACIDADES AME</h2>
+                <h2>UD2 - ACTIVACIÓN DE LAS CAPACIDADES AME</h2>
                 <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 2 ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Desarrollo de capacidades físicas básicas: fuerza, resistencia, velocidad y flexibilidad.</p>
+                <p>Un/a buen agente conoce sus capacidades. En esta unidad, desarrollaréis la resistencia y la velocidad, analizando el nivel de condición física mediante pruebas y parámetros. Trabajaréis la autorregulación del esfuerzo y el control de ejecución, favoreciendo la toma de conciencia sobre el propio rendimiento.</p>
+                <p><strong>💬 <em>¿Conoces realmente tus límites y cómo mejorarlos?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud2"></div>
+                <iframe src="data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 3 -->
         <section id="ud3" class="seccion">
             <div class="seccion-header">
-                <h2>UD 3: ENTRENAMIENTO CONJUNTO</h2>
+                <h2>UD3 - ENTRENAMIENTO CONJUNTO</h2>
                 <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 3 | Cooperación en Acción ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Juegos y actividades cooperativas para desarrollar el trabajo en equipo.</p>
+                <p>Ninguna misión se supera en solitario. A través de retos cooperativos, os comunicaréis, tomaréis decisiones compartidas y os adaptaréis a los compañeros/as. Aprenderéis a asumir roles y a resolver problemas de forma conjunta.</p>
+                <p><strong>💬 <em>¿Eres capaz de confiar en tu equipo y hacer que funcione?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud3"></div>
+                <iframe src="data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 4 -->
         <section id="ud4" class="seccion">
             <div class="seccion-header">
-                <h2>UD 4: ARCHIVO ESCALONES INVISIBLES</h2>
-                <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 4 | El enemigo que no se ve ]</p>
+                <h2>UD4 - ARCHIVO ESCALONES INVISIBLES</h2>
+                <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 4 | El Enemigo que no se ve ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Análisis del sedentarismo y estrategias para una vida activa.</p>
+                <p>Un/a agente debe detectar lo que no se ve a simple vista. Esta unidad, abordaréis los estereotipos de género y la violencia invisible, utilizando la expresión corporal y la dramatización. Reflexionaréis a través del cuerpo.</p>
+                <p><strong>💬 <em>¿Sabes interpretar y transmitir mensajes más allá de las palabras?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud4"></div>
+                <iframe src="data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 5 -->
         <section id="ud5" class="seccion">
             <div class="seccion-header">
-                <h2>UD 5: ACTIVACIÓN DE LAS CAPACIDADES II</h2>
+                <h2>UD5 - ACTIVACIÓN CAPACIDADES AME II</h2>
                 <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 5 ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Profundización en el desarrollo de capacidades físicas avanzadas.</p>
+                <p>El rendimiento de un/a agente depende de su preparación. Aquí, desarrollaréis la fuerza y la flexibilidad, incidiendo en la postura, prevención de lesiones y el control del esfuerzo. Incorporaréis herramientas digitales para mejorar el entrenamiento.</p>
+                <p><strong>💬 <em>¿Entrenas con control o solo repites sin pensar?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud5"></div>
+                <iframe src="data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 6 -->
         <section id="ud6" class="seccion">
             <div class="seccion-header">
-                <h2>UD 6: AGENTE EN TERRENO</h2>
+                <h2>UD6 - AGENTE EN TERRENO</h2>
                 <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 6 | Orientación Estratégica ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Técnicas de orientación en el medio natural y uso de mapas.</p>
+                <p>Perderse no es una opción. Aprenderéis a utilizar mapas, brújula y referencias espaciales, tomando decisiones en situaciones reales. Seréis autónomos/as y respetaréis el entorno natural.</p>
+                <p><strong>💬 <em>¿Sabrías orientarte si te quedas sin ayuda externa?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud6"></div>
+                <iframe src="data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 7 -->
         <section id="ud7" class="seccion">
             <div class="seccion-header">
-                <h2>UD 7: ENTRENAMIENTO DE CAMPO</h2>
+                <h2>UD7 - ENTRENAMIENTO DE CAMPO</h2>
                 <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 7 | Floorball ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Fundamentos técnicos y tácticos del floorball.</p>
+                <p>En situaciones de juego, un/a agente debe decidir rápido. Progresaréis en habilidades del floorball como pase, conducción y tiro, aplicadas a situaciones reales, así como principios de ataque (movilidad y desmarque) y defensa (ocupación del espacio).</p>
+                <p><strong>💬 <em>¿Tomas decisiones o solo reaccionas?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud7"></div>
+                <iframe src="data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 8 -->
         <section id="ud8" class="seccion">
             <div class="seccion-header">
-                <h2>UD 8: PATRONES CODIFICADOS AME</h2>
+                <h2>UD8 - PATRONES CODIFICADOS AME</h2>
                 <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 8 | Tutting ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Expresión corporal a través del tutting y movimientos geométricos.</p>
+                <p>El cuerpo también comunica. A través del Tutting, crearéis secuencias basadas en ángulos y formas, desarrollando coordinación, creatividad y expresión.</p>
+                <p><strong>💬 <em>¿Qué eres capaz de decir sin hablar?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud8"></div>
+                <iframe src="data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 9 -->
         <section id="ud9" class="seccion">
             <div class="seccion-header">
-                <h2>UD 9: OPERACIÓN TRADICIÓN</h2>
+                <h2>UD9 - OPERACIÓN TRADICIÓN</h2>
                 <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 9 | Juegos Tradicionales ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Recuperación y práctica de juegos tradicionales y populares.</p>
+                <p>Un/a agente conoce su historia. Practicaréis juegos tradicionales, analizando su valor cultural y social, y fomentando la inclusión, la cooperación y la transmisión del patrimonio.</p>
+                <p><strong>💬 <em>¿Qué podemos aprender del pasado para actuar mejor en el presente?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud9"></div>
+                <iframe src="data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 10 -->
         <section id="ud10" class="seccion">
             <div class="seccion-header">
-                <h2>UD 10: ENTRENAMIENTO DE CAMPO</h2>
+                <h2>UD10 - ENTRENAMIENTO DE CAMPO</h2>
                 <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 10 | Cachibol ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Fundamentos del cachibol: técnica, táctica y reglamento.</p>
+                <p>En esta unidad, trabajaréis los fundamentos del cachibol, desarrollando habilidades como lanzamiento y recepción. Aplicaréis principios básicos de organización ofensiva y defensiva, favoreciendo el juego en equipo.</p>
+                <p><strong>💬 <em>¿Tu equipo juega con intención o sin plan?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud10"></div>
+                <iframe src="data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 11 -->
         <section id="ud11" class="seccion">
             <div class="seccion-header">
-                <h2>UD 11: COORDINACIÓN ACROBÁTICA AME</h2>
+                <h2>UD11 - COORDINACIÓN ACROBÁTICA AME</h2>
                 <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 11 ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Desarrollo de habilidades acrobáticas y control corporal.</p>
+                <p>La coordinación es clave. En acrosport, construiréis figuras y pirámides, trabajando roles, equilibrio y seguridad, y promoviendo la confianza y la planificación conjunta.</p>
+                <p><strong>💬 <em>¿Cómo quieres trabajar para que el equipo confíe en ti?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud11"></div>
+                <iframe src="data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
         <!-- UD 12 -->
         <section id="ud12" class="seccion">
             <div class="seccion-header">
-                <h2>UD 12: AGENTE EN TERRENO</h2>
+                <h2>UD12 - AGENTE EN TERRENO</h2>
                 <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 12 | Voleibol ]</p>
             </div>
             <div class="contenido">
-                <h3>Descripción</h3>
-                <p>Técnicas y tácticas del voleibol aplicadas al juego real.</p>
+                <p>La misión concluye integrando todos los aprendizajes. A través del voleibol, aplicaréis habilidades técnicas y tácticas en un contexto real, culminando en un torneo organizado por vosotros mismos/as en la playa del Zapillo.</p>
+                <p><strong>💬 <em>¿Estás listo para demostrar todo lo que has aprendido?</em></strong></p>
             </div>
-            <div class="archivos-container">
-                <div class="archivos-header">
-                    <h3>📁 Materiales de la Unidad</h3>
+            <div class="pdf-preview-container">
+                <div class="pdf-preview-header">
+                    <h3>📄 Material de la Unidad</h3>
+                    <a href="data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf" class="btn-descargar" download>Descargar PDF</a>
                 </div>
-                <div id="archivos-ud12"></div>
+                <iframe src="data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
     </div>
 
     <script>
-        // Mapeo de UDs a carpetas
-        const udToCarpeta = {
-            'ud1': 'EV1', 'ud2': 'EV1', 'ud3': 'EV1', 'ud4': 'EV1',
-            'ud5': 'EV2', 'ud6': 'EV2', 'ud7': 'EV2', 'ud8': 'EV2',
-            'ud9': 'EV3', 'ud10': 'EV3', 'ud11': 'EV3', 'ud12': 'EV3'
-        };
-
         // Gestión de navegación
         function mostrarSeccion(seccionId) {
             document.querySelectorAll('.submenu').forEach(s => s.classList.remove('active'));
@@ -681,11 +723,6 @@
             }
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            // Cargar PDFs para esta UD
-            if (seccionId.startsWith('ud')) {
-                cargarPDFs(seccionId);
-            }
         }
 
         function toggleSubmenu(event, submenuId) {
@@ -700,41 +737,6 @@
         document.addEventListener('click', function() {
             document.querySelectorAll('.submenu').forEach(s => s.classList.remove('active'));
         });
-
-        // Cargar PDFs de una UD específica
-        async function cargarPDFs(udId) {
-            const carpeta = udToCarpeta[udId];
-            const contenedor = document.getElementById(`archivos-${udId}`);
-            
-            try {
-                // Intentar listar archivos de la carpeta
-                const response = await fetch(`data/${carpeta}/`);
-                const html = await response.text();
-                
-                // Extraer nombres de archivos PDF del HTML
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const links = doc.querySelectorAll('a');
-                
-                const pdfs = [];
-                links.forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href && href.toLowerCase().endsWith('.pdf')) {
-                        pdfs.push(href);
-                    }
-                });
-                
-                if (pdfs.length > 0) {
-                    contenedor.innerHTML = pdfs.map(pdf => 
-                        `<a href="data/${carpeta}/${pdf}" class="pdf-link" download>${pdf}</a>`
-                    ).join('');
-                } else {
-                    contenedor.innerHTML = '<p class="sin-archivos">No hay materiales disponibles aún</p>';
-                }
-            } catch (error) {
-                contenedor.innerHTML = '<p class="sin-archivos">No hay materiales disponibles aún</p>';
-            }
-        }
     </script>
 </body>
 </html>
