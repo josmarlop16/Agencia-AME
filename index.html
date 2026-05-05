@@ -366,12 +366,85 @@
             content: '📥 ';
         }
 
+        .btn-abrir-pdf {
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 14px;
+            display: inline-block;
+            font-family: 'Courier Prime', monospace !important;
+            font-weight: bold;
+        }
+
+        .btn-abrir-pdf:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-abrir-pdf::before {
+            content: '🔍 ';
+        }
+
+        .pdf-viewer-wrapper {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+        }
+
         .pdf-viewer {
             width: 100%;
             height: 600px;
             border: 2px solid #5a9bd4;
             border-radius: 5px;
             background: #1a2332;
+            pointer-events: none;
+        }
+
+        .pdf-click-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            cursor: pointer;
+            display: none;
+        }
+
+        .mobile-pdf-hint {
+            display: none;
+            text-align: center;
+            padding: 15px;
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            color: #3498db;
+            font-size: 13px;
+            margin-bottom: 10px;
+            font-family: 'Courier Prime', monospace !important;
+        }
+
+        .pdf-preview-image {
+            display: none;
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border: 2px solid #5a9bd4;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #1a2332;
+        }
+
+        .pdf-buttons-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 100%;
         }
 
         /* RESPONSIVE - MEJORADO */
@@ -460,25 +533,40 @@
                 padding: 10px;
             }
 
-            .pdf-viewer {
-                height: 400px;
+            /* OCULTAR iframe en móvil - solo mostrar botones */
+            .pdf-viewer-wrapper {
+                display: none !important;
             }
 
             .pdf-preview-header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
                 gap: 15px;
             }
 
             .pdf-preview-header h3 {
                 font-size: 18px;
+                text-align: center;
             }
 
-            .btn-descargar {
+            .pdf-buttons-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn-descargar,
+            .btn-abrir-pdf {
                 width: 100%;
                 text-align: center;
-                padding: 14px 20px;
-                font-size: 15px;
+                padding: 18px 20px;
+                font-size: 16px;
+                margin: 0;
+            }
+
+            /* Mostrar mensaje de ayuda en móvil */
+            .mobile-pdf-hint {
+                display: block;
+                font-size: 14px;
             }
 
             /* VIDEO RESPONSIVE */
@@ -533,12 +621,23 @@
             }
 
             /* PDF VIEWER MÓVIL PEQUEÑO */
-            .pdf-viewer {
-                height: 350px;
+            .pdf-viewer-wrapper {
+                display: none !important; /* Seguir oculto */
             }
 
             .pdf-preview-header h3 {
                 font-size: 16px;
+            }
+
+            .btn-descargar,
+            .btn-abrir-pdf {
+                font-size: 15px;
+                padding: 16px 16px;
+            }
+
+            .mobile-pdf-hint {
+                font-size: 13px;
+                padding: 12px;
             }
 
             /* VIDEO MÓVIL PEQUEÑO */
@@ -678,11 +777,20 @@
                 <p><strong>💬 <em>¿Estás preparado para actuar con seguridad antes, durante y después de cada misión?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf', '_blank')">
+                    <iframe src="data/EV1/UD1_PROTOCOLO_AGENTE_SALUDABLE.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -697,11 +805,20 @@
                 <p><strong>💬 <em>¿Conoces realmente tus límites y cómo mejorarlos?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf', '_blank')">
+                    <iframe src="data/EV1/UD2_ACTIVACION_DE_LAS_CAPACIDADES_AME.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -716,11 +833,20 @@
                 <p><strong>💬 <em>¿Eres capaz de confiar en tu equipo y hacer que funcione?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf', '_blank')">
+                    <iframe src="data/EV1/UD3_ENTRENAMIENTO_CONJUNTO_COOPERACION_EN_ACCION.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -735,11 +861,20 @@
                 <p><strong>💬 <em>¿Sabes interpretar y transmitir mensajes más allá de las palabras?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf', '_blank')">
+                    <iframe src="data/EV1/UD4_ARCHIVO_ESCALONES_INVISIBLES_EL_ENEMIGO_QUE_NO_SE_VE.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -754,11 +889,20 @@
                 <p><strong>💬 <em>¿Entrenas con control o solo repites sin pensar?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf', '_blank')">
+                    <iframe src="data/EV2/UD5_ACTIVACION_DE_LAS_CAPACIDADES_AME_II.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -773,11 +917,20 @@
                 <p><strong>💬 <em>¿Sabrías orientarte si te quedas sin ayuda externa?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf', '_blank')">
+                    <iframe src="data/EV2/UD6_AGENTE_EN_TERRENO_ORIENTACION_ESTRATEGICA.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -792,11 +945,20 @@
                 <p><strong>💬 <em>¿Tomas decisiones o solo reaccionas?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf', '_blank')">
+                    <iframe src="data/EV2/UD7_ENTRENAMIENTO_DE_CAMPO_FLOORBALL.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -811,11 +973,20 @@
                 <p><strong>💬 <em>¿Qué eres capaz de decir sin hablar?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf', '_blank')">
+                    <iframe src="data/EV2/UD8_PATRONES_CODIFICADOS_AME_TUTTING.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -830,11 +1001,20 @@
                 <p><strong>💬 <em>¿Qué podemos aprender del pasado para actuar mejor en el presente?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf', '_blank')">
+                    <iframe src="data/EV3/UD9_OPERACION_TRADICION_JUEGOS_TRADICIONALES_Y_POPULARES.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -849,11 +1029,20 @@
                 <p><strong>💬 <em>¿Tu equipo juega con intención o sin plan?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf', '_blank')">
+                    <iframe src="data/EV3/UD10_ENTRENAMIENTO_DE_CAMPO_CACHIBOL.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -868,11 +1057,20 @@
                 <p><strong>💬 <em>¿Cómo quieres trabajar para que el equipo confíe en ti?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf', '_blank')">
+                    <iframe src="data/EV3/UD11_COORDINACION_ACROBATICA_AME.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -887,11 +1085,20 @@
                 <p><strong>💬 <em>¿Estás listo para demostrar todo lo que has aprendido?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
+                <div class="mobile-pdf-hint">
+                    📱 Toca "Abrir PDF" para ver el documento completo
+                </div>
                 <div class="pdf-preview-header">
                     <h3>📄 Material de la Unidad</h3>
-                    <a href="data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    <div class="pdf-buttons-container">
+                        <a href="data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf" class="btn-abrir-pdf" target="_blank">Abrir PDF</a>
+                        <a href="data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf" class="btn-descargar" download>Descargar PDF</a>
+                    </div>
                 </div>
-                <iframe src="data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf" class="pdf-viewer"></iframe>
+                <div class="pdf-viewer-wrapper" onclick="window.open('data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf', '_blank')">
+                    <iframe src="data/EV3/UD12_AGENTE_EN_TERRENO_VOLEIBOL.pdf" class="pdf-viewer"></iframe>
+                    <div class="pdf-click-overlay"></div>
+                </div>
             </div>
         </section>
     </div>
