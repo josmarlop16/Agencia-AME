@@ -65,6 +65,43 @@
             height: auto;
         }
 
+        /* VIDEO CONTAINER */
+        .video-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(90, 155, 212, 0.1);
+            border: 2px solid #5a9bd4;
+            border-radius: 10px;
+        }
+
+        .video-container h3 {
+            color: #5a9bd4;
+            margin-bottom: 20px;
+            font-family: 'Special Elite', cursive !important;
+            font-size: 24px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            border: 2px solid #5a9bd4;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .clasificado {
             position: fixed;
             top: 20px;
@@ -134,7 +171,7 @@
             border: 2px solid #5a9bd4;
             border-top: none;
             border-radius: 0 0 5px 5px;
-            min-width: 400px;
+            min-width: 450px;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
@@ -390,6 +427,10 @@
                 width: 100%;
                 text-align: center;
             }
+
+            .video-wrapper {
+                padding-bottom: 75%; /* Ajuste para móvil */
+            }
         }
     </style>
 </head>
@@ -406,9 +447,9 @@
                 <div class="nav-btn" onclick="toggleSubmenu(event, 'submenu1')">1ª Evaluación</div>
                 <div class="submenu" id="submenu1">
                     <a href="#" onclick="mostrarSeccion('ud1')">Unidad Didáctica 1: Protocolo Agente Saludable</a>
-                    <a href="#" onclick="mostrarSeccion('ud2')">Unidad Didáctica 2: Activación Capacidades AME</a>
-                    <a href="#" onclick="mostrarSeccion('ud3')">Unidad Didáctica 3: Entrenamiento Conjunto</a>
-                    <a href="#" onclick="mostrarSeccion('ud4')">Unidad Didáctica 4: Archivo Escalones Invisibles</a>
+                    <a href="#" onclick="mostrarSeccion('ud2')">Unidad Didáctica 2: Activación de las Capacidades AME</a>
+                    <a href="#" onclick="mostrarSeccion('ud3')">Unidad Didáctica 3: Entrenamiento Conjunto: Cooperación en Acción</a>
+                    <a href="#" onclick="mostrarSeccion('ud4')">Unidad Didáctica 4: Archivo Escalones Invisibles: El Enemigo que no se ve</a>
                 </div>
             </li>
             
@@ -416,10 +457,10 @@
             <li class="nav-item-with-submenu">
                 <div class="nav-btn" onclick="toggleSubmenu(event, 'submenu2')">2ª Evaluación</div>
                 <div class="submenu" id="submenu2">
-                    <a href="#" onclick="mostrarSeccion('ud5')">Unidad Didáctica 5: Activación Capacidades II</a>
-                    <a href="#" onclick="mostrarSeccion('ud6')">Unidad Didáctica 6: Agente en Terreno: Orientación</a>
-                    <a href="#" onclick="mostrarSeccion('ud7')">Unidad Didáctica 7: Entrenamiento Campo: Floorball</a>
-                    <a href="#" onclick="mostrarSeccion('ud8')">Unidad Didáctica 8: Patrones Codificados: Tutting</a>
+                    <a href="#" onclick="mostrarSeccion('ud5')">Unidad Didáctica 5: Activación Capacidades AME II</a>
+                    <a href="#" onclick="mostrarSeccion('ud6')">Unidad Didáctica 6: Agente en Terreno: Orientación Estratégica</a>
+                    <a href="#" onclick="mostrarSeccion('ud7')">Unidad Didáctica 7: Entrenamiento de Campo: Floorball</a>
+                    <a href="#" onclick="mostrarSeccion('ud8')">Unidad Didáctica 8: Patrones Codificados AME: Tutting</a>
                 </div>
             </li>
             
@@ -427,8 +468,8 @@
             <li class="nav-item-with-submenu">
                 <div class="nav-btn" onclick="toggleSubmenu(event, 'submenu3')">3ª Evaluación</div>
                 <div class="submenu" id="submenu3">
-                    <a href="#" onclick="mostrarSeccion('ud9')">Unidad Didáctica 9: Operación Tradición</a>
-                    <a href="#" onclick="mostrarSeccion('ud10')">Unidad Didáctica 10: Entrenamiento Campo: Cachibol</a>
+                    <a href="#" onclick="mostrarSeccion('ud9')">Unidad Didáctica 9: Operación Tradición: Juegos Tradicionales y Populares</a>
+                    <a href="#" onclick="mostrarSeccion('ud10')">Unidad Didáctica 10: Entrenamiento de Campo: Cachibol</a>
                     <a href="#" onclick="mostrarSeccion('ud11')">Unidad Didáctica 11: Coordinación Acrobática AME</a>
                     <a href="#" onclick="mostrarSeccion('ud12')">Unidad Didáctica 12: Agente en Terreno: Voleibol</a>
                 </div>
@@ -478,6 +519,31 @@
                     </p>
                 </div>
             </div>
+
+            <!-- SECCIÓN DE VIDEO -->
+            <div class="video-container">
+                <h3>🎬 Presentación de la Agencia</h3>
+                <div class="video-wrapper">
+                    <!-- Opción 1: YouTube -->
+                    <!-- Sustituye VIDEO_ID por el ID de tu video de YouTube -->
+                    <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    
+                    <!-- Opción 2: Video local -->
+                    <!-- Sube tu video a la carpeta raíz y ponle nombre video-ame.mp4 -->
+                    <!-- <video controls>
+                        <source src="video-ame.mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video> -->
+                    
+                    <!-- PLACEHOLDER - Eliminar cuando añadas tu video -->
+                    <div style="background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: absolute;">
+                        <p style="color: #5a9bd4; font-size: 18px; text-align: center; padding: 20px;">
+                            📹 Aquí irá tu video de presentación<br>
+                            <small style="color: #94b8d6;">Ver instrucciones en el código HTML</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- UD 1 -->
@@ -521,8 +587,8 @@
         <!-- UD 3 -->
         <section id="ud3" class="seccion">
             <div class="seccion-header">
-                <h2>UD3 - ENTRENAMIENTO CONJUNTO</h2>
-                <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 3 | Cooperación en Acción ]</p>
+                <h2>UD3 - ENTRENAMIENTO CONJUNTO: COOPERACIÓN EN ACCIÓN</h2>
+                <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 3 ]</p>
             </div>
             <div class="contenido">
                 <p>Ninguna misión se supera en solitario. A través de retos cooperativos, os comunicaréis, tomaréis decisiones compartidas y os adaptaréis a los compañeros/as. Aprenderéis a asumir roles y a resolver problemas de forma conjunta.</p>
@@ -540,11 +606,11 @@
         <!-- UD 4 -->
         <section id="ud4" class="seccion">
             <div class="seccion-header">
-                <h2>UD4 - ARCHIVO ESCALONES INVISIBLES</h2>
-                <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 4 | El Enemigo que no se ve ]</p>
+                <h2>UD4 - ARCHIVO ESCALONES INVISIBLES: EL ENEMIGO QUE NO SE VE</h2>
+                <p class="codigo">[ 1ª EVALUACIÓN | UNIDAD DIDÁCTICA 4 ]</p>
             </div>
             <div class="contenido">
-                <p>Un/a agente debe detectar lo que no se ve a simple vista. Esta unidad, abordaréis los estereotipos de género y la violencia invisible, utilizando la expresión corporal y la dramatización. Reflexionaréis a través del cuerpo.</p>
+                <p>Un/a agente debe detectar lo que no se ve a simple vista. En esta unidad, abordaréis los estereotipos de género y la violencia invisible, utilizando la expresión corporal y la dramatización. Reflexionaréis a través del cuerpo.</p>
                 <p><strong>💬 <em>¿Sabes interpretar y transmitir mensajes más allá de las palabras?</em></strong></p>
             </div>
             <div class="pdf-preview-container">
@@ -578,8 +644,8 @@
         <!-- UD 6 -->
         <section id="ud6" class="seccion">
             <div class="seccion-header">
-                <h2>UD6 - AGENTE EN TERRENO</h2>
-                <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 6 | Orientación Estratégica ]</p>
+                <h2>UD6 - AGENTE EN TERRENO: ORIENTACIÓN ESTRATÉGICA</h2>
+                <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 6 ]</p>
             </div>
             <div class="contenido">
                 <p>Perderse no es una opción. Aprenderéis a utilizar mapas, brújula y referencias espaciales, tomando decisiones en situaciones reales. Seréis autónomos/as y respetaréis el entorno natural.</p>
@@ -597,8 +663,8 @@
         <!-- UD 7 -->
         <section id="ud7" class="seccion">
             <div class="seccion-header">
-                <h2>UD7 - ENTRENAMIENTO DE CAMPO</h2>
-                <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 7 | Floorball ]</p>
+                <h2>UD7 - ENTRENAMIENTO DE CAMPO: FLOORBALL</h2>
+                <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 7 ]</p>
             </div>
             <div class="contenido">
                 <p>En situaciones de juego, un/a agente debe decidir rápido. Progresaréis en habilidades del floorball como pase, conducción y tiro, aplicadas a situaciones reales, así como principios de ataque (movilidad y desmarque) y defensa (ocupación del espacio).</p>
@@ -616,8 +682,8 @@
         <!-- UD 8 -->
         <section id="ud8" class="seccion">
             <div class="seccion-header">
-                <h2>UD8 - PATRONES CODIFICADOS AME</h2>
-                <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 8 | Tutting ]</p>
+                <h2>UD8 - PATRONES CODIFICADOS AME: TUTTING</h2>
+                <p class="codigo">[ 2ª EVALUACIÓN | UNIDAD DIDÁCTICA 8 ]</p>
             </div>
             <div class="contenido">
                 <p>El cuerpo también comunica. A través del Tutting, crearéis secuencias basadas en ángulos y formas, desarrollando coordinación, creatividad y expresión.</p>
@@ -635,8 +701,8 @@
         <!-- UD 9 -->
         <section id="ud9" class="seccion">
             <div class="seccion-header">
-                <h2>UD9 - OPERACIÓN TRADICIÓN</h2>
-                <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 9 | Juegos Tradicionales ]</p>
+                <h2>UD9 - OPERACIÓN TRADICIÓN: JUEGOS TRADICIONALES Y POPULARES</h2>
+                <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 9 ]</p>
             </div>
             <div class="contenido">
                 <p>Un/a agente conoce su historia. Practicaréis juegos tradicionales, analizando su valor cultural y social, y fomentando la inclusión, la cooperación y la transmisión del patrimonio.</p>
@@ -654,8 +720,8 @@
         <!-- UD 10 -->
         <section id="ud10" class="seccion">
             <div class="seccion-header">
-                <h2>UD10 - ENTRENAMIENTO DE CAMPO</h2>
-                <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 10 | Cachibol ]</p>
+                <h2>UD10 - ENTRENAMIENTO DE CAMPO: CACHIBOL</h2>
+                <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 10 ]</p>
             </div>
             <div class="contenido">
                 <p>En esta unidad, trabajaréis los fundamentos del cachibol, desarrollando habilidades como lanzamiento y recepción. Aplicaréis principios básicos de organización ofensiva y defensiva, favoreciendo el juego en equipo.</p>
@@ -692,8 +758,8 @@
         <!-- UD 12 -->
         <section id="ud12" class="seccion">
             <div class="seccion-header">
-                <h2>UD12 - AGENTE EN TERRENO</h2>
-                <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 12 | Voleibol ]</p>
+                <h2>UD12 - AGENTE EN TERRENO: VOLEIBOL</h2>
+                <p class="codigo">[ 3ª EVALUACIÓN | UNIDAD DIDÁCTICA 12 ]</p>
             </div>
             <div class="contenido">
                 <p>La misión concluye integrando todos los aprendizajes. A través del voleibol, aplicaréis habilidades técnicas y tácticas en un contexto real, culminando en un torneo organizado por vosotros mismos/as en la playa del Zapillo.</p>
