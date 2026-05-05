@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AME - Agencia de Movimiento y Energía</title>
     
+    <!-- Favicon con el logo AME -->
+    <link rel="icon" type="image/png" href="logo-ame.png">
+    <link rel="shortcut icon" type="image/png" href="logo-ame.png">
+    
     <!-- Fuentes tipo "agente secreto" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,15 +65,16 @@
         }
 
         .imagen-central img {
-            max-width: 300px;
+            max-width: 100%;
+            max-height: 400px;
             height: auto;
         }
 
-        /* VIDEO CONTAINER */
+        /* VIDEO CONTAINER - MEJORADO RESPONSIVE */
         .video-container {
             text-align: center;
             margin: 40px 0;
-            padding: 30px;
+            padding: 20px;
             background: rgba(90, 155, 212, 0.1);
             border: 2px solid #5a9bd4;
             border-radius: 10px;
@@ -87,7 +92,7 @@
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
             border-radius: 10px;
             border: 2px solid #5a9bd4;
@@ -313,10 +318,10 @@
             font-family: 'Courier Prime', monospace !important;
         }
 
-        /* VISTA PREVIA PDF */
+        /* VISTA PREVIA PDF - MEJORADO RESPONSIVE */
         .pdf-preview-container {
             margin-top: 30px;
-            padding: 20px;
+            padding: 15px;
             background: rgba(90, 155, 212, 0.1);
             border-radius: 8px;
             border: 1px solid #5a9bd4;
@@ -369,12 +374,23 @@
             background: #1a2332;
         }
 
-        /* Responsive */
+        /* RESPONSIVE - MEJORADO */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .pdf-viewer {
+                height: 500px;
+            }
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
                 gap: 5px;
                 align-items: stretch;
+                padding: 0 10px;
             }
 
             nav li {
@@ -384,11 +400,20 @@
             nav a, nav .nav-btn {
                 width: 100%;
                 text-align: center;
+                font-size: 13px;
+                padding: 12px 15px;
             }
 
             .submenu {
                 position: relative;
                 min-width: 100%;
+                left: 0;
+                margin-top: 5px;
+            }
+
+            .submenu a {
+                font-size: 12px;
+                padding: 10px 15px;
             }
 
             .clasificado {
@@ -396,22 +421,43 @@
                 right: 10px;
                 font-size: 10px;
                 padding: 5px 10px;
+                letter-spacing: 1px;
             }
 
             #principal h1 {
-                font-size: 28px;
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            .seccion-header h2 {
+                font-size: 22px;
+                letter-spacing: 1px;
             }
 
             .contenido {
-                padding: 20px;
+                padding: 20px 15px;
+            }
+
+            .contenido h3 {
+                font-size: 20px;
+            }
+
+            #principal .intro {
+                padding: 25px 20px;
             }
 
             .logo-container img {
-                max-width: 180px;
+                max-width: 150px;
             }
 
             .imagen-central img {
-                max-width: 250px;
+                max-width: 100%;
+                max-height: 250px;
+            }
+
+            /* PDF VIEWER RESPONSIVE */
+            .pdf-preview-container {
+                padding: 10px;
             }
 
             .pdf-viewer {
@@ -421,15 +467,91 @@
             .pdf-preview-header {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 15px;
+            }
+
+            .pdf-preview-header h3 {
+                font-size: 18px;
             }
 
             .btn-descargar {
                 width: 100%;
                 text-align: center;
+                padding: 14px 20px;
+                font-size: 15px;
+            }
+
+            /* VIDEO RESPONSIVE */
+            .video-container {
+                padding: 15px;
+                margin: 30px 0;
+            }
+
+            .video-container h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
             }
 
             .video-wrapper {
-                padding-bottom: 75%; /* Ajuste para móvil */
+                padding-bottom: 75%; /* Ajuste 4:3 para móvil */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            nav {
+                padding: 10px 0;
+            }
+
+            #principal h1 {
+                font-size: 20px;
+            }
+
+            .seccion-header h2 {
+                font-size: 18px;
+            }
+
+            .contenido {
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+
+            .contenido h3 {
+                font-size: 18px;
+            }
+
+            #principal .intro {
+                padding: 20px 15px;
+                font-size: 14px;
+            }
+
+            .logo-container img {
+                max-width: 120px;
+            }
+
+            /* PDF VIEWER MÓVIL PEQUEÑO */
+            .pdf-viewer {
+                height: 350px;
+            }
+
+            .pdf-preview-header h3 {
+                font-size: 16px;
+            }
+
+            /* VIDEO MÓVIL PEQUEÑO */
+            .video-container {
+                padding: 10px;
+            }
+
+            .video-container h3 {
+                font-size: 18px;
+            }
+
+            .video-wrapper {
+                padding-bottom: 80%; /* Más cuadrado para pantallas muy pequeñas */
             }
         }
     </style>
